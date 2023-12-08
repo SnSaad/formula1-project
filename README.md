@@ -1,7 +1,4 @@
-![Screenshot (101)](https://github.com/SnSaad/formula1-project/assets/98678581/261b23ab-2ce9-4986-b586-d9f707593ef4)# Formula 1 Project Using Microsoft Azure
-
-This repository contains a Formula 1 project demonstrating the integration of various Microsoft Azure services for data management, transformation, and analysis.
-
+### Formual 1 Project Using Microsoft Azure
 ## Project Overview
 This comprehensive project focuses on Formula 1 (F1) data ingestion from Azure Data Lake into Azure Databricks, leveraging PySpark for intricate data transformations within the Databricks environment. The transformed data is loaded into an SQL database within Databricks, enabling seamless visualization and analysis using PySpark SQL for generating insightful visualizations and reports entirely within the Databricks platform. This end-to-end workflow emphasizes the power of PySpark and SQL for managing, transforming, and visualizing F1 data in a unified Databricks environment, facilitating efficient and insightful data-driven decision-making processes.
 
