@@ -5,6 +5,19 @@ This repository contains a Formula 1 project demonstrating the integration of va
 ## Project Overview
 This comprehensive project focuses on Formula 1 (F1) data ingestion from Azure Data Lake into Azure Databricks, leveraging PySpark for intricate data transformations within the Databricks environment. The transformed data is loaded into an SQL database within Databricks, enabling seamless visualization and analysis using PySpark SQL for generating insightful visualizations and reports entirely within the Databricks platform. This end-to-end workflow emphasizes the power of PySpark and SQL for managing, transforming, and visualizing F1 data in a unified Databricks environment, facilitating efficient and insightful data-driven decision-making processes.
 
+## Table of Contents
+
+- [Prerequisites](#prerequisites)
+- [Project Structure](#project-structure)
+- [Setup](#setup)
+- [Data Ingestion](#data-ingestion)
+- [Data Transformation using Data Flow and Data Bricks](#data-transformation-using-data-flow-and-data-bricks)
+- [Data Analysis](#data-analysis)
+- [Results](#results)
+- [Contributing](#contributing)
+
+
+
 ### Steps Involved
 
 1. **Data Ingestion**
