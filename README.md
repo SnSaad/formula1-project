@@ -1,4 +1,4 @@
-# Formula 1 Project Using Microsoft Azure
+![Screenshot (101)](https://github.com/SnSaad/formula1-project/assets/98678581/261b23ab-2ce9-4986-b586-d9f707593ef4)# Formula 1 Project Using Microsoft Azure
 
 This repository contains a Formula 1 project demonstrating the integration of various Microsoft Azure services for data management, transformation, and analysis.
 
@@ -10,8 +10,8 @@ This comprehensive project focuses on Formula 1 (F1) data ingestion from Azure D
 - [Prerequisites](#prerequisites)
 - [Project Structure](#project-structure)
 - [Setup](#setup)
-- [Data Ingestion](#data-ingestion)
-- [Data Transformation using Data Flow and Data Bricks](#data-transformation-using-data-flow-and-data-bricks)
+- [Data Ingestion from Eragast API to Azure Data Lake and Databricks](#data-ingestion-from-eragast-api-to-azure-data-lake-and-databricks)
+- [Data Transformation using PySpark in Azure Databricks](#data-transformation-using-pyspark-in-azure-databricks)
 - [Data Analysis](#data-analysis)
 - [Results](#results)
 - [Contributing](#contributing)
@@ -66,21 +66,66 @@ s://github.com/SnSaad/formula1-project/assets/98678581/04b7a972-7bde-423c-944f-2
 
 1. **Downloading Datasets from Eragast API**:
    - Retrieve datasets related to circuits, constructors, drivers, pit stops, lap times, race results, and qualifying from the Eragast API.
-
 2. **Storing Datasets in Azure Data Lake**:
    - Upload acquired datasets into Azure Data Lake Storage, organizing them within the 'raw' folder for further processing.
-
 3. **Setting up Azure Key Vault for Credential Storage**:
    - Create a Microsoft Enterprise Application named 'formual1-app' to manage secure credentials (client ID, tenant ID, secret) in Azure Key Vault.
-
 4. **Providing Data Lake Access to 'formual1-app'**:
    - Grant 'formual1-app' appropriate access permissions to the Azure Data Lake Storage for secure and controlled data retrieval.
-
 5. **Configuring Secret Scope in Azure Databricks**:
    - Establish a secret scope in Azure Databricks linked to the Azure Key Vault, allowing access to the stored keys and credentials.
-
 6. **Accessing Data Lake from Azure Databricks**:
    - Use the configured secret scope to access and mount the 'raw' folder within Azure Data Lake in Azure Databricks for further processing and analysis.
+7. **Data Ingestion with PySpark**:
+   ![Screenshot (101)](https://github.com/SnSaad/formula1-project/assets/98678581/de8fe66d-0f82-413a-8601-c461db6009cb)
+
+- Utilize PySpark within Azure Databricks to read the mounted files directly from the 'raw' folder in Azure Data Lake.
+- Perform necessary data transformations or analyses as needed using PySpark functionalities.
+
+# Data Transformation using PySpark in Azure Databricks
+
+The transformation involves column renaming, timestamp creation for file update tracking, and the creation of new datasets (drivers standing, constructor standing, and race results) using PySpark SQL's join and filter capabilities.
+
+### Data Transformation Process Overview
+### 1. Column Renaming and Timestamp Creation
+- Perform necessary column renaming operations using PySpark if required for consistency or clarity.
+- Utilize `dbutils.widgets` within PySpark to create timestamp columns, tracking the last updated time of the files for reference.
+### 2. Creation of New Datasets
+- **Drivers Standing Dataset**: Use PySpark SQL to join and filter relevant information to create a dataset providing drivers' standing information.
+- ![Screenshot (104)](https://github.com/SnSaad/formula1-project/assets/98678581/3f3ceec0-50ba-4ae0-bd20-16f1154c3789)
+
+- **Constructor Standing Dataset**: Employ PySpark SQL for joining and filtering operations to generate a dataset containing constructor standing details.
+- ![Screenshot (103)](https://github.com/SnSaad/formula1-project/assets/98678581/dc63fc53-3141-4f01-bbec-512f5b99900d)
+- **Race Results Dataset**: Utilize PySpark SQL's join and filter functionalities to create a dataset comprising race results based on specific criteria.
+- ![Screenshot (105)](https://github.com/SnSaad/formula1-project/assets/98678581/6a727063-1d53-4a74-91ab-ddc363332aa0)
+
+### Analysis and Visualization using PySpark SQL in Azure Databricks
+
+The process of creating databases, temporary tables, and conducting analysis and visualization for Driver Standing and Constructor Standing datasets using PySpark SQL within Azure Databricks.
+### Process Overview
+### 1. Database and Temporary Table Creation
+![Screenshot (106)](https://github.com/SnSaad/formula1-project/assets/98678581/3762eab8-0648-47d8-b979-d88a419e250f)
+![Screenshot (107)](https://github.com/SnSaad/formula1-project/assets/98678581/36bbfe48-10ab-453d-80e5-1e71a00b47dc)
+- **Database Creation**: Use PySpark SQL to create a database for organizing and managing the datasets.
+- **Temporary Table Creation**: Generate temporary tables from the datasets to facilitate analysis and visualization.
+### 2. Driver Standing Analysis and Visualization
+- **Analysis**: Utilize PySpark SQL queries to perform insightful analysis on the Driver Standing dataset.
+- **Visualization**: Create visualizations (charts, graphs, etc.) within Azure Databricks based on the analysis results for Driver Standing data.
+- ![Screenshot (110)](https://github.com/SnSaad/formula1-project/assets/98678581/ec8a6516-a15c-4611-9ae5-24b199a0e4b6)
+- ![Screenshot (112)](https://github.com/SnSaad/formula1-project/assets/98678581/0b15f3a7-259a-4ba5-91e6-49960ae43c90)
+### 3. Constructor Standing Analysis and Visualization
+- **Analysis**: Employ PySpark SQL queries for in-depth analysis of the Constructor Standing dataset.
+- **Visualization**: Generate visual representations within Azure Databricks to showcase key insights derived from the Constructor Standing data.
+- ![Screenshot (114)](https://github.com/SnSaad/formula1-project/assets/98678581/50fceed5-6469-4c77-a183-e96e48675924)
+- ![Screenshot (115)](https://github.com/SnSaad/formula1-project/assets/98678581/cd561056-2718-42a3-9d91-709aaf8fc556)
+- ![Screenshot (116)](https://github.com/SnSaad/formula1-project/assets/98678581/283d781f-ac49-464f-9941-9020ce996fe1)
+
+
+
+
+
+  
+
 
 
 
