@@ -3,9 +3,7 @@
 This repository contains a Formula 1 project demonstrating the integration of various Microsoft Azure services for data management, transformation, and analysis.
 
 ## Project Overview
-
-### Objective
-The objective of this project is to showcase the end-to-end process of working with Formula 1 data, including ingestion, transformation, storage, and analysis, using Microsoft Azure services.
+This comprehensive project focuses on Formula 1 (F1) data ingestion from Azure Data Lake into Azure Databricks, leveraging PySpark for intricate data transformations within the Databricks environment. The transformed data is loaded into an SQL database within Databricks, enabling seamless visualization and analysis using PySpark SQL for generating insightful visualizations and reports entirely within the Databricks platform. This end-to-end workflow emphasizes the power of PySpark and SQL for managing, transforming, and visualizing F1 data in a unified Databricks environment, facilitating efficient and insightful data-driven decision-making processes.
 
 ### Steps Involved
 
